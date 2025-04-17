@@ -9,7 +9,7 @@ const Pago = () => {
   const cvu = '0000003100018016809494';
   const cuit = '27-17500019-27';
   const titular = 'Silvia Marcela Fernandez';
-  const numeroWhatsApp = '54911XXXXXXXXX';
+  const numeroWhatsApp = '5491131387879';
 
   const [metodoPago, setMetodoPago] = useState('');
   const [copiadoAlias, setCopiadoAlias] = useState(false);

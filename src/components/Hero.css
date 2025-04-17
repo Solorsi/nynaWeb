@@ -1,34 +1,38 @@
 .hero {
-<<<<<<< HEAD
+  background-color: black;
+  width: 100vw;
+  padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;  /* Ocupa toda la altura de la pantalla */
-  background-color: black;
-  padding: 0;     /* Elimina cualquier padding que pueda estar afectando el contenedor */
-  overflow: hidden; /* Asegura que nada sobresalga */
 }
 
-.hero img {
-  width: 100%;     /* Ajusta el logo al 100% del ancho del contenedor */
-  height: 100%;    /* Asegura que la imagen ocupe toda la altura del contenedor */
-  object-fit: contain; /* Mantiene la proporción de la imagen */
+
+.hero-logo {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  padding: 20px;
+  box-sizing: border-box;
 }
-=======
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #fff0f5;
-    color: #333;
-    max-width: 100%;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
   }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .hero p {
-    font-size: 1.2rem;
-    color: #666;
-  }
->>>>>>> f7aa3923e75b0770b287b537bd9b49c9d9c9455d
+}
+
+.hero-logo {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+  object-fit: contain;
+  animation: fadeIn 2.5s ease-in-out;
+}
+

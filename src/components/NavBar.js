@@ -1,27 +1,43 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
+import { FiMenu, FiX, FiShoppingBag } from 'react-icons/fi';
+import { CartContext } from '../context/CartContext';
 
 const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { cartItems } = useContext(CartContext);
+
   return (
     <nav className="navbar">
-      <div className="logo">
-<<<<<<< HEAD
-        <h1>NYNA CLOTHES</h1>
-=======
-        <Link to="/">
-          <img src="/logo.png" alt="nynaclothes logo" className="logo-img" />
-        </Link>
->>>>>>> f7aa3923e75b0770b287b537bd9b49c9d9c9455d
+      <div className="nav-left">
+        <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+        </button>
       </div>
-      <ul className="nav-links">
-        <li><Link to="/">Inicio</Link></li>
-        <li><Link to="/productos">Productos</Link></li>
-        <li><Link to="/contacto">Contacto</Link></li>
-        <li><Link to="/carrito">Carrito</Link></li>
-      </ul>
+
+      <div className="nav-center">
+        <Link to="/" className="logo-text">NYNA CLOTHES</Link>
+      </div>
+
+      <div className="nav-right">
+        <Link to="/carrito" className="cart-icon">
+          <FiShoppingBag size={22} />
+          {cartItems.length > 0 && <span className="cart-count">{cartItems.length}</span>}
+        </Link>
+      </div>
+
+      {menuOpen && (
+        <div className="mobile-menu">
+          <Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
+          <Link to="/productos" onClick={() => setMenuOpen(false)}>Productos</Link>
+          <Link to="/contacto" onClick={() => setMenuOpen(false)}>Contacto</Link>
+          <Link to="/carrito" onClick={() => setMenuOpen(false)}>Carrito</Link>
+        </div>
+      )}
     </nav>
   );
 };
 
 export default NavBar;
+
