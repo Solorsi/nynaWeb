@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React, { createContext, useState, useEffect } from 'react';
+=======
+import React, { createContext, useState } from 'react';
+>>>>>>> f7aa3923e75b0770b287b537bd9b49c9d9c9455d
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
+<<<<<<< HEAD
   const [cartItems, setCartItems] = useState(() => {
     const savedCart = localStorage.getItem('nyna_cart');
     return savedCart ? JSON.parse(savedCart) : [];
@@ -39,6 +44,9 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('nyna_datos', JSON.stringify(datosCliente));
   }, [datosCliente]);
+=======
+  const [cartItems, setCartItems] = useState([]);
+>>>>>>> f7aa3923e75b0770b287b537bd9b49c9d9c9455d
 
   const addToCart = (product) => {
     setCartItems((prev) => [...prev, product]);
@@ -52,6 +60,7 @@ export const CartProvider = ({ children }) => {
 
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
 
+<<<<<<< HEAD
   const generarNuevoPedido = () => {
     const nuevo = orderNumber + 1;
     setOrderNumber(nuevo);
@@ -77,3 +86,11 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+=======
+  return (
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, total }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
+>>>>>>> f7aa3923e75b0770b287b537bd9b49c9d9c9455d
