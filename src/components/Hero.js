@@ -4,8 +4,7 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero">
-      <h1>NYNA CLOTHES</h1>
-      <p>Tu estilo, tu esencia</p>
+      <img src="/logo2.png" alt="nynaclothes logo" className="logo-img" />
     </section>
   );
 };

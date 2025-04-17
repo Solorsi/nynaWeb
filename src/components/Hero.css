@@ -1,17 +1,15 @@
 .hero {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #fff0f5;
-    color: #333;
-    max-width: 100%;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    color: #666;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Ocupa toda la altura de la pantalla */
+  background-color: black;
+  padding: 0;     /* Elimina cualquier padding que pueda estar afectando el contenedor */
+  overflow: hidden; /* Asegura que nada sobresalga */
+}
+
+.hero img {
+  width: 100%;     /* Ajusta el logo al 100% del ancho del contenedor */
+  height: 100%;    /* Asegura que la imagen ocupe toda la altura del contenedor */
+  object-fit: contain; /* Mantiene la proporción de la imagen */
+}

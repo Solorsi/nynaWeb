@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import Productos from './pages/Productos';
 import Contacto from './pages/Contacto';
 import Carrito from './pages/Carrito';
+import Confirmacion from './pages/Confirmacion';
+import Pago from './pages/Pago';
+import Gracias from './pages/Gracias';
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
         <Route path="/productos" element={<Productos />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/carrito" element={<Carrito />} />
+        <Route path="/confirmar" element={<Confirmacion />} />
+        <Route path="/pago" element={<Pago />} />
+        <Route path="/gracias" element={<Gracias />} />
       </Routes>
     </Router>
   );
