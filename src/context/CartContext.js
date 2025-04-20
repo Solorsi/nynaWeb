@@ -41,7 +41,34 @@ export const CartProvider = ({ children }) => {
   }, [datosCliente]);
 
   const addToCart = (product) => {
-    setCartItems((prev) => [...prev, product]);
+    setCartItems((prevItems) => {
+      const existing = prevItems.find(item => item.id === product.id);
+      if (existing) {
+        return prevItems.map(item =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...prevItems, { ...product, quantity: 1 }];
+      }
+    });
+  };
+
+  const decrementQuantity = (id) => {
+    setCartItems((prevItems) =>
+      prevItems
+        .map(item =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter(item => item.quantity > 0)
+    );
+  };
+
+  const incrementQuantity = (id) => {
+    setCartItems((prevItems) =>
+      prevItems.map(item =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
   };
 
   const removeFromCart = (id) => {
@@ -50,7 +77,7 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => setCartItems([]);
 
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   const generarNuevoPedido = () => {
     const nuevo = orderNumber + 1;
@@ -65,6 +92,8 @@ export const CartProvider = ({ children }) => {
       addToCart,
       removeFromCart,
       clearCart,
+      incrementQuantity,
+      decrementQuantity,
       total,
       tipoEntrega,
       setTipoEntrega,
@@ -77,4 +106,5 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
 

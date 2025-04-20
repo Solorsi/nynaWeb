@@ -1,40 +1,30 @@
 import React, { useContext } from 'react';
-import './ProductGrid.css';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
-
-const products = [
-  {
-    id: 1,
-    name: "Vestido Floral",
-    price: 12000,
-    image: "https://via.placeholder.com/200"
-  },
-  {
-    id: 2,
-    name: "Top Rosa",
-    price: 8000,
-    image: "https://via.placeholder.com/200"
-  },
-  {
-    id: 3,
-    name: "Short Denim",
-    price: 10000,
-    image: "https://via.placeholder.com/200"
-  },
-];
+import './ProductGrid.css';
+import products from '../data/products';
 
 const ProductGrid = () => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext); // solo traés addToCart
 
   return (
     <section className="product-grid">
       {products.map(product => (
-        <div className="product-card" key={product.id}>
-          <img src={product.image} alt={product.name} />
-          <h3>{product.name}</h3>
-          <p>${product.price}</p>
-          <button onClick={() => addToCart(product)}>Agregar al carrito</button>
-        </div>
+        <Link to={`/producto/${product.id}`} key={product.id} className="product-link">
+          <div className="product-card">
+            <img src={product.images[0]} alt={product.name} />
+            <h3>{product.name}</h3>
+            <p>${product.price.toLocaleString()}</p>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                addToCart(product);
+              }}
+            >
+              Agregar al carrito
+            </button>
+          </div>
+        </Link>
       ))}
     </section>
   );

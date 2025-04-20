@@ -1,9 +1,13 @@
 .footer {
-    max-width: 100%;
-    text-align: center;
-    padding: 20px;
-    background-color: #fef0f4;
-    color: #777;
-    font-size: 0.9rem;
-    margin-top: 40px;
-  }
+  background-color: #f9f9f9;
+  color: #000; /* negro */
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #000; /* iconos o enlaces */
+  text-decoration: none;
+}
+

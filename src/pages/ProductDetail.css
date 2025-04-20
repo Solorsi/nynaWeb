@@ -1,0 +1,141 @@
+/* Página de producto */
+.pagina-producto {
+  background-color: #fff;
+  padding-top: 0; /* Elimina espacio entre Navbar y componente */
+}
+
+/* Contenedor general */
+.detalle-container {
+  padding: 2rem 1rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Contenido del producto */
+.contenido-producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  padding: 2rem 1rem 2.5rem;
+  margin-top: 0;
+  position: relative;
+}
+
+/* Flecha */
+.volver-icono {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.4rem;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Carrusel */
+.producto-carrusel {
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+}
+
+.producto-carrusel img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dots */
+.producto-carrusel .slick-dots {
+  bottom: -10px;
+  text-align: center;
+  position: relative;
+}
+
+.producto-carrusel .slick-dots li {
+  margin: 0 4px;
+  display: inline-block;
+}
+
+.producto-carrusel .slick-dots button {
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ccc;
+  border: none;
+  padding: 0;
+}
+
+.producto-carrusel .slick-dots .slick-active button {
+  background-color: #000;
+}
+
+/* Info */
+.info-producto {
+  text-align: center;
+}
+
+.producto-nombre {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111;
+  margin-top: 1.5rem;
+}
+
+.producto-precio {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 1rem;
+  color: #111;
+}
+
+/* Envío */
+.envio-info {
+  background-color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón agregar */
+.btn-agregar {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #111;
+  transform: scale(1.02);
+}
+
+/* Link para ver más productos */
+.volver-a-productos {
+  text-align: center;
+  font-weight: 500;
+}
+
+.volver-a-productos a {
+  color: #111;
+  text-decoration: none;
+}
