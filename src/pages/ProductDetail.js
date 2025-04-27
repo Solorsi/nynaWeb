@@ -17,14 +17,16 @@ const ProductDetail = () => {
 
   if (!product) return <p>Producto no encontrado.</p>;
 
+  const multipleImages = product.images.length > 1;
+
   const sliderSettings = {
-    dots: product.images.length > 1,
+    dots: true,
     arrows: false,
     infinite: true,
+    autoplay: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     pauseOnFocus: true,
@@ -45,13 +47,19 @@ const ProductDetail = () => {
           </Link>
 
           <div className="producto-carrusel">
-            <Slider {...sliderSettings}>
-              {product.images.map((img, index) => (
-                <div key={index}>
-                  <img src={img} alt={`${product.name} ${index + 1}`} />
-                </div>
-              ))}
-            </Slider>
+            {multipleImages ? (
+              <Slider {...sliderSettings}>
+                {product.images.map((img, index) => (
+                  <div key={index} className="slide-img">
+                    <img src={img} alt={`${product.name} ${index + 1}`} />
+                  </div>
+                ))}
+              </Slider>
+            ) : (
+              <div className="slide-img">
+                <img src={product.images[0]} alt={product.name} />
+              </div>
+            )}
           </div>
 
           <div className="info-producto">

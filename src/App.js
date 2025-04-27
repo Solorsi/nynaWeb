@@ -11,6 +11,8 @@ import Pago from './pages/Pago';
 import Gracias from './pages/Gracias';
 import ProductDetail from './pages/ProductDetail';
 import products from './data/products';
+import SearchResults from './pages/SearchResults';
+import CategoriaProductos from './pages/CategoriaProductos'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -29,6 +31,8 @@ function App() {
             <Route path="/pago" element={<Pago />} />
             <Route path="/gracias" element={<Gracias />} />
             <Route path="/producto/:id" element={<ProductDetail products={products} />} />
+            <Route path="/buscar" element={<SearchResults />} />
+            <Route path="/productos/:categoria" element={<CategoriaProductos />} />
           </Routes>
         </main>
         <Footer />
