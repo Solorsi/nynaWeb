@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../context/CartContext';
 import './Pago.css';
+import { Copy } from 'lucide-react';
 
 const Pago = () => {
   const { cartItems, total, tipoEntrega, datosCliente, setDatosCliente, clearCart } = useContext(CartContext);
@@ -83,7 +84,9 @@ ${cartItems.map(p => `- ${p.name} $${p.price}`).join('\n')}
         {numeroPedido && (
           <div className="dato-copiable">
             <p className="numero-pedido">N° de pedido: <strong>{numeroPedido}</strong></p>
-            <button className="btn-inline" onClick={() => handleCopy(numeroPedido, 'pedido')}>📋</button>
+            <button className="btn-inline" onClick={() => handleCopy(numeroPedido, 'pedido')}>
+              <Copy size={16} />
+            </button>
             {copiadoPedido && <span className="copiado">¡Copiado!</span>}
           </div>
         )}
@@ -122,13 +125,17 @@ ${cartItems.map(p => `- ${p.name} $${p.price}`).join('\n')}
 
             <div className="dato-copiable">
               <p><strong>Alias:</strong> {alias}</p>
-              <button className="btn-inline" onClick={() => handleCopy(alias, 'alias')}>📋</button>
+              <button className="btn-inline" onClick={() => handleCopy(alias, 'alias')}>
+                <Copy size={16} />
+              </button>
               {copiadoAlias && <span className="copiado">¡Copiado!</span>}
             </div>
 
             <div className="dato-copiable">
               <p><strong>CVU:</strong> {cvu}</p>
-              <button className="btn-inline" onClick={() => handleCopy(cvu, 'cvu')}>📋</button>
+              <button className="btn-inline" onClick={() => handleCopy(cvu, 'cvu')}>
+                <Copy size={16} />
+              </button>
               {copiadoCVU && <span className="copiado">¡Copiado!</span>}
             </div>
 

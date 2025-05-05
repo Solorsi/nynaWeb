@@ -29,17 +29,27 @@ const Carrito = () => {
 
       <div>
         {cartItems.length === 0 ? (
-          <p>No hay productos.</p>
+          <div className="carrito-vacio">
+          <img src="/carritovacio.png" alt="Ilustración de carrito vacío" className="carrito-vacio-img" />
+          <p>¡Tu carrito está vacío!</p>
+          <Link to="/productos" className="carrito-volver-productos">
+            Ver productos
+          </Link>
+          </div>
         ) : (
           <>
             <ul>
               {cartItems.map((item) => (
                 <li key={item.id}>
                   <div className="carrito-producto-info">
-                    <img src={item.images?.[0]} alt={item.name} />
-                  <div>
+                    {item.images && item.images.length > 0 ? (
+                      <img src={item.images[0]} alt={item.name} className="carrito-img-mini" />
+                    ) : (
+                      <div className="carrito-img-placeholder" />
+                    )}
+                    <div>
                       <strong>{item.name}</strong>
-                      <div>${item.price.toLocaleString()} x {item.quantity}</div>
+                      <div>${item.price.toLocaleString('es-AR').replace(',', '.')} x {item.quantity}</div>
                     </div>
                   </div>
 
@@ -72,7 +82,7 @@ const Carrito = () => {
             </div>
 
             <p className="carrito-total">
-              <strong>Total:</strong> ${total.toLocaleString()}
+              <strong>Total:</strong> ${total.toLocaleString('es-AR').replace(',', '.')}
             </p>
 
             <div className="carrito-buttons">

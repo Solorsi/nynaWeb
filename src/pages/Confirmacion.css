@@ -179,3 +179,16 @@
 .btn-continuar:hover {
   background-color: #222;
 }
+.radio-inline-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
