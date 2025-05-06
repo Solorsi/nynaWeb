@@ -44,14 +44,14 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #ff5e99;
+  background-color: white;
   color: white;
   font-weight: bold;
 }
 
 .detalle {
   margin-top: 20px;
-  background: #fff0f5;
+  background: white;
   padding: 15px;
   border-radius: 10px;
   text-align: left;
@@ -69,7 +69,7 @@
 
 .btn-secundario {
   margin-top: 10px;
-  background-color: #ffe0eb;
+  background-color: white;
   border: none;
   padding: 10px 15px;
   border-radius: 10px;
@@ -80,7 +80,7 @@
 }
 
 .btn-secundario:hover {
-  background-color: #ffc7da;
+  background-color: white;
 }
 
 .dato-copiable {
@@ -91,7 +91,7 @@
 }
 
 .btn-inline {
-  background-color: #ffe0eb;
+  background-color: white;
   border: none;
   padding: 4px 8px;
   border-radius: 6px;
@@ -101,7 +101,7 @@
 }
 
 .btn-inline:hover {
-  background-color: #ffc7da;
+  background-color: white;
 }
 
 .copiado {
@@ -127,8 +127,8 @@
 }
 
 .envio-opcion:hover {
-  border-color: #ff5e99;
-  background: #fff0f7;
+  border-color: white;
+  background: white;
 }
 
 .envio-opcion input {
@@ -136,8 +136,8 @@
 }
 
 .input-error {
-  border: 2px solid #ff4d4f !important;
-  background-color: #fff6f6;
+  border: 2px solid white;
+  background-color: white;
 }
 .envio-opcion {
   display: flex;
@@ -154,8 +154,8 @@
 }
 
 .envio-opcion.seleccionada {
-  border: 2px solid #ff5e99;
-  background: #fff0f7;
+  border: 2px solid white;
+  background: white;
 }
 
 .envio-opcion.colapsada {
@@ -191,4 +191,33 @@
   gap: 8px;
   font-size: 0.95rem;
   font-weight: 500;
+}
+.envio-opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  padding: 10px;
+  line-height: 1.4;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.envio-opcion input {
+  margin-bottom: 6px;
+}
+
+.envio-opcion s {
+  margin-right: 4px;
+  color: #888;
+}
+
+@media (max-width: 500px) {
+  .envio-opcion {
+    font-size: 14px;
+  }
 }

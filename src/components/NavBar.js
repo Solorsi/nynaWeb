@@ -90,7 +90,6 @@ const NavBar = () => {
               )}
             </div>
 
-            <Link to="/contacto" onClick={closeMenu}>Contacto</Link>
             <Link to="/carrito" onClick={closeMenu}>Carrito</Link>
           </div>
 

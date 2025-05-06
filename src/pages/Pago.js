@@ -8,7 +8,7 @@ const Pago = () => {
 
   const alias = 'nynaclothes';
   const cvu = '0000003100018016809494';
-  const cuit = '27-17500019-27';
+  const cuit = '27-17500192-27';
   const titular = 'Silvia Marcela Fernandez';
   const numeroWhatsApp = '5491131387879';
 
@@ -93,20 +93,40 @@ ${cartItems.map(p => `- ${p.name} $${p.price}`).join('\n')}
       </div>
 
       <ul>
-        {cartItems.map((item, i) => (
-          <li key={i}>{item.name} - ${item.price}</li>
-        ))}
+      {cartItems.map((item, i) => (
+          <li key={i}>{item.quantity} x {item.name} - ${item.price}</li>
+      ))}
+
       </ul>
 
       <p><strong>Total a pagar:</strong> ${total}</p>
 
       <div className="form-section">
         <h3>Elegí el método de pago</h3>
-        <div className="metodos">
+        <div className="opciones-envio">
           {puedeEfectivo && (
-            <button onClick={() => setMetodoPago('efectivo')}>Efectivo (al retirar)</button>
+            <label className={`envio-opcion ${metodoPago === 'efectivo' ? 'seleccionada' : metodoPago ? 'colapsada' : ''}`}>
+              <input
+                type="radio"
+                name="metodo-pago"
+                value="efectivo"
+                checked={metodoPago === 'efectivo'}
+                onChange={(e) => setMetodoPago(e.target.value)}
+              />
+              Efectivo (al retirar)
+            </label>
           )}
-          <button onClick={() => setMetodoPago('transferencia')}>Transferencia (Mercado Pago)</button>
+
+          <label className={`envio-opcion ${metodoPago === 'transferencia' ? 'seleccionada' : metodoPago ? 'colapsada' : ''}`}>
+            <input
+              type="radio"
+              name="metodo-pago"
+              value="transferencia"
+              checked={metodoPago === 'transferencia'}
+              onChange={(e) => setMetodoPago(e.target.value)}
+            />
+            Transferencia (Mercado Pago)
+          </label>
         </div>
 
         {metodoPago === 'efectivo' && (
@@ -143,7 +163,7 @@ ${cartItems.map(p => `- ${p.name} $${p.price}`).join('\n')}
             <p><strong>Titular:</strong> {titular}</p>
 
             <button className="btn-secundario" onClick={handleConfirmar}>
-              Enviar comprobante por WhatsApp
+              Confirmar compra y enviar comprobante por WhatsApp
             </button>
           </div>
         )}

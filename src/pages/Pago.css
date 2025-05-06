@@ -80,13 +80,13 @@ li {
 .metodos button {
   padding: 8px 14px;
   background-color: #000;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 20px;
   font-size: 0.82rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color white ease;
   min-width: 160px;
 }
 
@@ -158,4 +158,28 @@ li {
 .metodos button.activo {
   background-color: #444;
   font-weight: 700;
+}
+.envio-opcion {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.envio-opcion input[type="radio"] {
+  margin: 0;
+}
+
+.envio-opcion.seleccionada {
+  border-color: black;
+  font-weight: bold;
+}
+
+.envio-opcion.colapsada {
+  opacity: 0.6;
 }

@@ -25,6 +25,7 @@ const Confirmacion = () => {
   };
 
   const total = opcionEnvio ? totalBase + (costosEnvio[opcionEnvio] || 0) : totalBase;
+  const isEnvioGratis = totalBase >= 100000;
 
   const datosCompletos =
     nombre &&
@@ -67,7 +68,7 @@ const Confirmacion = () => {
 
       <ul>
         {cartItems.map((item, index) => (
-          <li key={index}>{item.name} - ${item.price}</li>
+        <li key={index}>{item.quantity} x {item.name} - ${item.price}</li>
         ))}
       </ul>
 
@@ -91,7 +92,7 @@ const Confirmacion = () => {
           }}
         >
           <option value="">Seleccionar método</option>
-          <option value="Retiro">Retiro por punto (Gratis)</option>
+          <option value="Retiro">Retiro por Devoto (Gratis)</option>
           <option value="Envío">Quiero envío</option>
         </select>
 
@@ -111,7 +112,7 @@ const Confirmacion = () => {
                       checked={isSelected}
                       onChange={(e) => setOpcionEnvio(e.target.value)}
                     />
-                    {opcion} — ${precio}
+                    {opcion} — {isEnvioGratis ? <><s>${precio}</s> Gratis</> : `$${precio}`}
                   </label>
                 );
               })}
