@@ -31,23 +31,33 @@ const Pago = () => {
     }
   }, [metodoPago, setDatosCliente]);
 
+  const envioCosto = datosCliente.envio === 'Envío' && total < 100000
+  ? datosCliente.opcionEnvio === 'Moto mensajería en CABA'
+    ? 6500
+    : datosCliente.opcionEnvio === 'Correo Argentino a domicilio'
+    ? 9000
+    : 7000
+  : 0;
+
+const totalFinal = total + envioCosto;
+
   const mensajeWhatsApp = `
-📦 Pedido confirmado
+Pedido confirmado 📦
 
-🔢 Número de pedido: ${numeroPedido}
+Número de pedido: ${numeroPedido} 🔢
 
-🧍‍♀️ Cliente: ${datosCliente.nombre}
-📞 Contacto: ${datosCliente.contacto}
-📧 Email: ${datosCliente.email}
-🆔 Documento: ${datosCliente.documento}
+Cliente: ${datosCliente.nombre} 🧍‍♀️ 
+Contacto: ${datosCliente.contacto} 📞 
+Email: ${datosCliente.email} 📧 
+Documento: ${datosCliente.documento} 🆔 
 
-🚚 Envío: ${datosCliente.envio}${datosCliente.envio === 'Envío' ? ` - ${datosCliente.opcionEnvio}` : ''}
+Entrega: ${datosCliente.envio}${datosCliente.envio === 'Envío' ? ` - ${datosCliente.opcionEnvio}` : ''} 🚚 
 ${datosCliente.envio === 'Envío' ? `📍 Dirección: ${datosCliente.direccion} ${datosCliente.numero}, CP ${datosCliente.codigoPostal}, ${datosCliente.barrio}` : ''}
 
-💳 Método de pago: ${metodoPago === 'transferencia' ? 'Transferencia' : 'Efectivo'}
-💵 Total a pagar: $${total}
+Método de pago: ${metodoPago === 'transferencia' ? 'Transferencia' : 'Efectivo'} 💳 
+Total a pagar: $${totalFinal} 💵 
 
-🛍️ Productos:
+Productos: 🛍️ 
 ${cartItems.map(p => `- ${p.name} $${p.price}`).join('\n')}
 `;
 

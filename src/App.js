@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,6 +16,7 @@ import CategoriaProductos from './pages/CategoriaProductos';
 import WhatsAppButton from './components/WhatsAppButton';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 
 function MainContent() {
   const location = useLocation();
@@ -48,6 +50,7 @@ function App() {
         <Navbar />
         <MainContent />
         <Footer />
+        <Analytics />
       </Router>
     </div>
   );
