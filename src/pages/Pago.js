@@ -8,7 +8,7 @@ const Pago = () => {
 
   const alias = 'nynaclothes';
   const cvu = '0000003100018016809494';
-  const cuit = '27-17500192-27';
+  const cuit = '27-17500192-7';
   const titular = 'Silvia Marcela Fernandez';
   const numeroWhatsApp = '5491131387879';
 

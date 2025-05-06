@@ -12,8 +12,7 @@ function shuffleArray(array) {
 }
 
 const Productos = () => {
-  const shuffledProducts = shuffleArray(products); // 🔥 Mezclamos
-
+  const shuffledProducts = shuffleArray(products); 
   return (
     <>
       <h2 style={{ marginLeft: '2rem', marginTop: '2rem' }}>Todos los productos</h2>

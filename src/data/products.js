@@ -143,15 +143,64 @@ const products = [
     id: 21,
     name: "Pant Savage",
     price: 30000,
-    categories: ["tops-y-remeras", "pantalones"], 
+    categories: ["pantalones"], 
     images: ["/productos/Pantalones/PantSavage1.jpeg", "/productos/Pantalones/PantSavage2.jpeg", "/productos/Pantalones/PantSavage3.jpeg"]
   },
   {
     id: 22,
     name: "Cartera Aura",
     price: 32000,
-    categories: ["tops-y-remeras", "accesorios"], 
+    categories: ["accesorios"], 
     images: ["/productos/Accesorios/CarteraAura.jpeg"]
+  },
+  {
+    id: 23,
+    name: "Campera Velvet",
+    price: 63000,
+    categories: ["abrigos"], 
+    images: ["/productos/Abrigos/CamperaVelvet1.jpeg", "/productos/Abrigos/CamperaVelvet2.jpeg"]
+  },
+  {
+    id: 24,
+    name: "Pant Noir",
+    price: 50000,
+    categories: ["pantalones"], 
+    images: ["/productos/Pantalones/PantNoir1.jpeg", "/productos/Pantalones/PantNoir2.jpeg"]
+  },
+  {
+    id: 25,
+    name: "Set Selene",
+    price: 42000,
+    categories: ["sets"], 
+    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"]
+  },
+  {
+    id: 26,
+    name: "Top Selene",
+    price: 20000,
+    categories: ["tops-y-remeras"], 
+    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"]
+  },
+  {
+    id: 26,
+    name: "Pant Selene",
+    price: 30000,
+    categories: ["pantalones"], 
+    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"]
+  },
+  {
+    id: 27,
+    name: "Top Garnet",
+    price: 20000,
+    categories: ["tops-y-remeras"], 
+    images: ["/productos/TopsYRemeras/TopGarnet1.jpeg", "/productos/TopsYRemeras/TopGarnet2.jpeg"]
+  },
+  {
+    id: 28,
+    name: "Top Terracotta",
+    price: 22000,
+    categories: ["tops-y-remeras"], 
+    images: ["/productos/TopsYRemeras/TopTerracotta1.jpeg", "/productos/TopsYRemeras/TopTerracotta2.jpeg"]
   },
 ];
 

@@ -4,9 +4,11 @@ import ProductGrid from '../components/ProductGrid';
 import products from '../data/products';
 
 const Home = () => {
-  const destacadosIds = [1, 6, 18, 21];
+  const destacadosIds = [25, 6, 23, 21];
 
-  const destacados = products.filter(product => destacadosIds.includes(product.id));
+  const destacados = products
+    .filter(product => destacadosIds.includes(product.id))
+    .sort(() => Math.random() - 0.5); 
 
   return (
     <>

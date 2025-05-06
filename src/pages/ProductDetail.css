@@ -1,18 +1,15 @@
-/* Página de producto */
 .pagina-producto {
   background-color: #fff;
-  padding-top: 0; /* Elimina espacio entre Navbar y componente */
+  padding-top: 0; 
 }
 
-/* Contenedor general */
 .detalle-container {
-  padding: 2rem 1rem 1rem;
+  padding: 0 1rem 1rem;
   max-width: 600px;
   margin: 0 auto;
   position: relative;
 }
 
-/* Contenido del producto */
 .contenido-producto {
   display: flex;
   flex-direction: column;
@@ -25,7 +22,6 @@
   position: relative;
 }
 
-/* Flecha */
 .volver-icono {
   position: absolute;
   top: 10px;
@@ -38,7 +34,6 @@
   z-index: 10;
 }
 
-/* Carrusel */
 .producto-carrusel {
   width: 100%;
   max-width: 350px;
@@ -48,12 +43,11 @@
 .producto-carrusel img {
   width: 100%;
   max-height: 400px;
-  object-fit: cover;
+  object-fit: contain; 
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Dots */
 .producto-carrusel .slick-dots {
   bottom: -10px;
   text-align: center;
@@ -78,7 +72,6 @@
   background-color: #000;
 }
 
-/* Info */
 .info-producto {
   text-align: center;
 }
@@ -87,7 +80,7 @@
   font-size: 1.4rem;
   font-weight: 700;
   color: #111;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem; 
 }
 
 .producto-precio {
@@ -96,7 +89,6 @@
   color: #111;
 }
 
-/* Envío */
 .envio-info {
   background-color: #fff;
   padding: 0.6rem 1.2rem;
@@ -106,7 +98,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Botón agregar */
 .btn-agregar {
   width: 100%;
   padding: 12px;
@@ -121,6 +112,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  margin-top: 1rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -129,7 +121,6 @@
   transform: scale(1.02);
 }
 
-/* Link para ver más productos */
 .volver-a-productos {
   text-align: center;
   font-weight: 500;
