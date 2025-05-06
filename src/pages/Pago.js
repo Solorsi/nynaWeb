@@ -42,23 +42,25 @@ const Pago = () => {
 const totalFinal = total + envioCosto;
 
   const mensajeWhatsApp = `
-Pedido confirmado 📦
+Pedido confirmado 
 
-Número de pedido: ${numeroPedido} 🔢
+Número de pedido: ${numeroPedido} 
 
-Cliente: ${datosCliente.nombre} 🧍‍♀️ 
-Contacto: ${datosCliente.contacto} 📞 
-Email: ${datosCliente.email} 📧 
-Documento: ${datosCliente.documento} 🆔 
+Cliente: ${datosCliente.nombre} 
+Contacto: ${datosCliente.contacto} 
+Email: ${datosCliente.email} 
+Documento: ${datosCliente.documento} 
 
-Entrega: ${datosCliente.envio}${datosCliente.envio === 'Envío' ? ` - ${datosCliente.opcionEnvio}` : ''} 🚚 
+Entrega: ${datosCliente.envio}${datosCliente.envio === 'Envío' ? ` - ${datosCliente.opcionEnvio}` : ''} $${envioCosto} 
 ${datosCliente.envio === 'Envío' ? `📍 Dirección: ${datosCliente.direccion} ${datosCliente.numero}, CP ${datosCliente.codigoPostal}, ${datosCliente.barrio}` : ''}
 
-Método de pago: ${metodoPago === 'transferencia' ? 'Transferencia' : 'Efectivo'} 💳 
-Total a pagar: $${totalFinal} 💵 
+Método de pago: ${metodoPago === 'transferencia' ? 'Transferencia' : 'Efectivo'} 
+Total a pagar: $${totalFinal} 
 
-Productos: 🛍️ 
+Productos:
 ${cartItems.map(p => `- ${p.name} $${p.price}`).join('\n')}
+
+Gracias ${datosCliente.nombre} por tu compra!
 `;
 
   const handleCopy = (texto, tipo) => {
