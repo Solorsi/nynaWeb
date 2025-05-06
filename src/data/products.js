@@ -182,21 +182,21 @@ const products = [
     images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"]
   },
   {
-    id: 26,
+    id: 27,
     name: "Pant Selene",
     price: 30000,
     categories: ["pantalones"], 
     images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"]
   },
   {
-    id: 27,
+    id: 28,
     name: "Top Garnet",
     price: 20000,
     categories: ["tops-y-remeras"], 
     images: ["/productos/TopsYRemeras/TopGarnet1.jpeg", "/productos/TopsYRemeras/TopGarnet2.jpeg"]
   },
   {
-    id: 28,
+    id: 29,
     name: "Top Terracotta",
     price: 22000,
     categories: ["tops-y-remeras"], 
