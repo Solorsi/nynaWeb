@@ -13,7 +13,7 @@ const products = [
     price: 20000,
     categories: ["polleras-y-shorts"],
     images: ["/productos/PollerasYShorts/polleraAries1.jpeg", "/productos/PollerasYShorts/polleraAries2.jpeg"],
-    stock: 1
+    stock: 2
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const products = [
     price: 20000,
     categories: ["tops-y-remeras"],
     images: ["/productos/TopsYRemeras/topJean1.jpeg", "/productos/TopsYRemeras/topJean1.jpeg"],
-    stock: 1
+    stock: 4
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const products = [
     price: 24000,
     categories: ["tops-y-remeras"],
     images: ["/productos/TopsYRemeras/remeCruzada1.jpeg", "/productos/TopsYRemeras/remeCruzada1.jpeg"],
-    stock: 1
+    stock: 0
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const products = [
     price: 21000,
     categories: ["tops-y-remeras"],
     images: ["/productos/TopsYRemeras/topSaraMarron.jpeg"],
-    stock: 1
+    stock: 2
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ const products = [
     price: 21000,
     categories: ["tops-y-remeras"],
     images: ["/productos/TopsYRemeras/topSaraNegro.jpeg"],
-    stock: 1
+    stock: 3
   },
   {
     id: 10,
@@ -117,7 +117,7 @@ const products = [
     price: 20000,
     categories: ["tops-y-remeras"],
     images: ["/productos/TopsYRemeras/topSilverNegro.jpeg"],
-    stock: 1
+    stock: 3
   },
   {
     id: 16,
@@ -146,7 +146,7 @@ const products = [
   {
     id: 19,
     name: "Sweater Haze",
-    price: 45000,
+    price: 55000,
     categories: ["abrigos"],
     images: ["/productos/Abrigos/SweaterHaze.jpeg"],
     stock: 0
@@ -197,7 +197,7 @@ const products = [
     price: 42000,
     categories: ["sets"], 
     images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"],
-    stock: 1
+    stock: 2
   },
   {
     id: 26,
@@ -205,7 +205,7 @@ const products = [
     price: 20000,
     categories: ["tops-y-remeras"], 
     images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"],
-    stock: 1
+    stock: 3
   },
   {
     id: 27,
@@ -213,7 +213,7 @@ const products = [
     price: 30000,
     categories: ["pantalones"], 
     images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"],
-    stock: 1
+    stock: 2
   },
   {
     id: 28,
@@ -229,6 +229,14 @@ const products = [
     price: 22000,
     categories: ["tops-y-remeras"], 
     images: ["/productos/TopsYRemeras/TopTerracotta1.jpeg", "/productos/TopsYRemeras/TopTerracotta2.jpeg"],
+    stock: 1
+  },
+  {
+    id: 30,
+    name: "Short Velvet",
+    price: 22000,
+    categories: ["polleras-y-shorts"], 
+    images: ["/productos/PollerasYShorts/ShortVelvet1.jpeg", "/productos/PollerasYShorts/ShortVelvet2.jpeg"],
     stock: 1
   },
 ];
