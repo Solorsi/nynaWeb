@@ -51,3 +51,31 @@
 .product-card button:hover {
   background-color: #333; 
 }
+.product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.sin-stock-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.disabled-btn {
+  background-color: #aaa !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.no-click {
+  pointer-events: none;
+}

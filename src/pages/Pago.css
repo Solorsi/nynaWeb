@@ -94,6 +94,11 @@ li {
   background-color: #222;
 }
 
+.metodos button.activo {
+  background-color: #444;
+  font-weight: 700;
+}
+
 .detalle {
   padding: 20px;
   background-color: #f0f0f0;
@@ -155,10 +160,7 @@ li {
   color: green;
   margin-left: 6px;
 }
-.metodos button.activo {
-  background-color: #444;
-  font-weight: 700;
-}
+
 .envio-opcion {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -183,3 +185,40 @@ li {
 .envio-opcion.colapsada {
   opacity: 0.6;
 }
+
+/* 🔥 ESTILOS DE TOTAL Y RESUMEN FINAL */
+.resumen-final {
+  margin: 20px 0;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.resumen-final ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.resumen-final p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.resumen-final p.descuento {
+  color: #0a0;
+  font-weight: 500;
+}
+
+.resumen-final p.envio {
+  color: #000;
+}
+
+.total-pago-solo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #000;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin: 30px 0;
+}
+

@@ -4,7 +4,7 @@ import { CartContext } from '../context/CartContext';
 import { FaShoppingCart } from 'react-icons/fa';
 import './ProductGrid.css';
 import productsData from '../data/products';
-import AddToCartAlert from './AddToCartAlert'; 
+import AddToCartAlert from './AddToCartAlert';
 
 const ProductGrid = ({ products }) => {
   const { addToCart } = useContext(CartContext);
@@ -15,6 +15,7 @@ const ProductGrid = ({ products }) => {
 
   const handleAddToCart = (e, product) => {
     e.preventDefault();
+    if (product.stock === 0) return;
     addToCart(product);
     setSelectedProduct(product);
     setShowAlert(true);
@@ -23,19 +24,35 @@ const ProductGrid = ({ products }) => {
   return (
     <>
       <section className="product-grid">
-        {productsToRender.map(product => (
-          <Link to={`/producto/${product.id}`} key={product.id} className="product-link">
-            <div className="product-card">
-              <img src={product.images[0]} alt={product.name} />
+        {productsToRender.map(product => {
+          const sinStock = product.stock === 0;
+          const cardContent = (
+            <div className={`product-card ${sinStock ? 'no-click' : ''}`}>
+              <div className="product-img-wrapper">
+                <img src={product.images[0]} alt={product.name} />
+                {sinStock && <span className="sin-stock-badge">SIN STOCK</span>}
+              </div>
               <h3>{product.name}</h3>
               <p>${product.price.toLocaleString('es-AR').replace(',', '.')}</p>
-              <button onClick={(e) => handleAddToCart(e, product)}>
+              <button
+                onClick={(e) => handleAddToCart(e, product)}
+                disabled={sinStock}
+                className={sinStock ? 'disabled-btn' : ''}
+              >
                 <FaShoppingCart style={{ marginRight: '8px' }} />
-                Agregar al carrito
+                {sinStock ? 'No disponible' : 'Agregar al carrito'}
               </button>
             </div>
-          </Link>
-        ))}
+          );
+
+          return sinStock ? (
+            <div key={product.id}>{cardContent}</div>
+          ) : (
+            <Link to={`/producto/${product.id}`} key={product.id} className="product-link">
+              {cardContent}
+            </Link>
+          );
+        })}
       </section>
 
       {showAlert && selectedProduct && (

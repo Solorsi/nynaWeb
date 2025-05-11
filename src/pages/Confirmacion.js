@@ -4,7 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import './Confirmacion.css';
 
 const Confirmacion = () => {
-  const { cartItems, total: totalBase, setTipoEntrega, setDatosCliente } = useContext(CartContext);
+  const {
+    cartItems,
+    total,
+    totalConDescuento,
+    descuentoAplicado,
+    descuentoMonto,
+    codigoAplicado,
+    setTipoEntrega,
+    setDatosCliente,
+  } = useContext(CartContext);
+
   const navigate = useNavigate();
 
   const [nombre, setNombre] = useState('');
@@ -24,8 +34,9 @@ const Confirmacion = () => {
     "Correo Argentino a sucursal": 7000,
   };
 
-  const total = opcionEnvio ? totalBase + (costosEnvio[opcionEnvio] || 0) : totalBase;
-  const isEnvioGratis = totalBase >= 100000;
+  const isEnvioGratis = total >= 100000;
+  const envioCosto = isEnvioGratis ? 0 : (costosEnvio[opcionEnvio] || 0);
+  const totalFinal = totalConDescuento + envioCosto;
 
   const datosCompletos =
     nombre &&
@@ -68,11 +79,21 @@ const Confirmacion = () => {
 
       <ul>
         {cartItems.map((item, index) => (
-        <li key={index}>{item.quantity} x {item.name} - ${item.price}</li>
+          <li key={index}>{item.quantity} x {item.name} - ${item.price}</li>
         ))}
       </ul>
 
-      <p><strong>Total:</strong> ${total}</p>
+      {descuentoAplicado > 0 && (
+        <p style={{ color: '#0a0', marginBottom: '4px' }}>
+          Cupón <strong>{codigoAplicado}</strong> aplicado: -${descuentoMonto.toLocaleString('es-AR')}
+        </p>
+      )}
+      {!isEnvioGratis && opcionEnvio && (
+        <p style={{ color: '#555', marginBottom: '4px' }}>
+          Envío: +${envioCosto.toLocaleString('es-AR')}
+        </p>
+      )}
+      <p className="total-final">Total: ${totalFinal.toLocaleString('es-AR')}</p>
 
       <div className="form-section">
         <h3>1. Tus datos</h3>

@@ -4,7 +4,17 @@ import './Pago.css';
 import { Copy } from 'lucide-react';
 
 const Pago = () => {
-  const { cartItems, total, tipoEntrega, datosCliente, setDatosCliente, clearCart } = useContext(CartContext);
+  const {
+    cartItems,
+    total,
+    totalConDescuento,
+    descuentoAplicado,
+    descuentoMonto,
+    tipoEntrega,
+    datosCliente,
+    setDatosCliente,
+    clearCart
+  } = useContext(CartContext);
 
   const alias = 'nynaclothes';
   const cvu = '0000003100018016809494';
@@ -32,14 +42,14 @@ const Pago = () => {
   }, [metodoPago, setDatosCliente]);
 
   const envioCosto = datosCliente.envio === 'Envío' && total < 100000
-  ? datosCliente.opcionEnvio === 'Moto mensajería en CABA'
-    ? 6500
-    : datosCliente.opcionEnvio === 'Correo Argentino a domicilio'
-    ? 9000
-    : 7000
-  : 0;
+    ? datosCliente.opcionEnvio === 'Moto mensajería en CABA'
+      ? 6500
+      : datosCliente.opcionEnvio === 'Correo Argentino a domicilio'
+        ? 9000
+        : 7000
+    : 0;
 
-const totalFinal = total + envioCosto;
+  const totalFinal = totalConDescuento + envioCosto;
 
   const mensajeWhatsApp = `
 Pedido confirmado 
@@ -55,7 +65,7 @@ Entrega: ${datosCliente.envio}${datosCliente.envio === 'Envío' ? ` - ${datosCli
 ${datosCliente.envio === 'Envío' ? `📍 Dirección: ${datosCliente.direccion} ${datosCliente.numero}, CP ${datosCliente.codigoPostal}, ${datosCliente.barrio}` : ''}
 
 Método de pago: ${metodoPago === 'transferencia' ? 'Transferencia' : 'Efectivo'} 
-Total a pagar: $${totalFinal} 
+Total: $${totalFinal} 
 
 Productos:
 ${cartItems.map(p => `- ${p.name} $${p.price}`).join('\n')}
@@ -104,14 +114,11 @@ Gracias ${datosCliente.nombre} por tu compra!
         )}
       </div>
 
-      <ul>
-      {cartItems.map((item, i) => (
-          <li key={i}>{item.quantity} x {item.name} - ${item.price}</li>
-      ))}
-
-      </ul>
-
-      <p><strong>Total a pagar:</strong> ${total}</p>
+      <div className="total-pago-box">
+        <p className="carrito-total centrado">
+          <strong>Total a pagar:</strong> ${totalFinal.toLocaleString('es-AR')}
+        </p>
+      </div>
 
       <div className="form-section">
         <h3>Elegí el método de pago</h3>

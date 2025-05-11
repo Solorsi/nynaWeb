@@ -9,6 +9,13 @@ const Carrito = () => {
   const {
     cartItems,
     total,
+    totalConDescuento,
+    descuentoMonto,
+    descuentoAplicado,
+    codigoDescuento,
+    setCodigoDescuento,
+    codigoAplicado,
+    aplicarCupon,
     incrementQuantity,
     decrementQuantity,
     removeFromCart,
@@ -17,7 +24,14 @@ const Carrito = () => {
 
   const navigate = useNavigate();
   const envioGratisMinimo = 100000;
-  const progreso = Math.min((total / envioGratisMinimo) * 100, 100);
+
+  const progreso = Math.min((totalConDescuento / envioGratisMinimo) * 100, 100);
+
+  const handleCuponSubmit = () => {
+    aplicarCupon(codigoDescuento);
+  };
+
+  const codigoEsValido = codigoAplicado && descuentoAplicado > 0;
 
   return (
     <div className="carrito">
@@ -30,11 +44,11 @@ const Carrito = () => {
       <div>
         {cartItems.length === 0 ? (
           <div className="carrito-vacio">
-          <img src="/carritovacio.png" alt="Ilustración de carrito vacío" className="carrito-vacio-img" />
-          <p>¡Tu carrito está vacío!</p>
-          <Link to="/productos" className="carrito-volver-productos">
-            Ver productos
-          </Link>
+            <img src="/carritovacio.png" alt="Ilustración de carrito vacío" className="carrito-vacio-img" />
+            <p>¡Tu carrito está vacío!</p>
+            <Link to="/productos" className="carrito-volver-productos">
+              Ver productos
+            </Link>
           </div>
         ) : (
           <>
@@ -70,19 +84,40 @@ const Carrito = () => {
             <div className="envio-gratis-box">
               <div className="envio-barra">
                 <div
-                  className={`envio-barra-progreso ${total >= envioGratisMinimo ? 'completo' : ''}`}
+                  className={`envio-barra-progreso ${totalConDescuento >= envioGratisMinimo ? 'completo' : ''}`}
                   style={{ width: `${progreso}%` }}
                 />
               </div>
               <p className="envio-barra-texto">
-                {total >= envioGratisMinimo
+                {totalConDescuento >= envioGratisMinimo
                   ? '🎉 ¡Genial! Tenés envío gratis.'
                   : '🚚 Envío gratis superando los $100.000'}
               </p>
             </div>
 
-            <p className="carrito-total">
-              <strong>Total:</strong> ${total.toLocaleString('es-AR').replace(',', '.')}
+            <div className="cupon-input-wrapper">
+              <input
+                type="text"
+                placeholder="¿Tenés un cupón de descuento?"
+                value={codigoDescuento}
+                onChange={(e) => setCodigoDescuento(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleCuponSubmit()}
+              />
+              <button onClick={handleCuponSubmit}>
+                <span className="flecha-cupon">➤</span>
+              </button>
+            </div>
+
+            {codigoEsValido ? (
+              <p className="descuento-aplicado">
+                Cupón <strong>{codigoAplicado}</strong> aplicado: -${descuentoMonto.toLocaleString('es-AR')}
+              </p>
+            ) : (
+              <p className="descuento-aplicado">Ingresá un cupón si tenés uno</p>
+            )}
+
+            <p className="carrito-total centrado">
+              <strong>Total:</strong> ${totalConDescuento.toLocaleString('es-AR').replace(',', '.')}
             </p>
 
             <div className="carrito-buttons">

@@ -221,3 +221,13 @@
     font-size: 14px;
   }
 }
+
+.total-final {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #000;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
