@@ -78,7 +78,7 @@ const NavBar = () => {
               {productosOpen && (
                 <div className="dropdown-menu">
                   <Link to="/productos" onClick={closeMenu}>Ver todos los productos</Link>
-                  <Link to="/productos/sale" onClick={closeMenu}>Sale</Link>
+                  <Link to="/productos/deportivo-importado" onClick={closeMenu}>Deportivo</Link>
                   <Link to="/productos/abrigos" onClick={closeMenu}>Abrigos</Link>
                   <Link to="/productos/polleras-y-shorts" onClick={closeMenu}>Polleras y Shorts</Link>
                   <Link to="/productos/sets" onClick={closeMenu}>Sets</Link>

@@ -239,6 +239,38 @@ const products = [
     images: ["/productos/PollerasYShorts/ShortVelvet1.jpeg", "/productos/PollerasYShorts/ShortVelvet2.jpeg"],
     stock: 1
   },
+  {
+    id: 31,
+    name: "Camperita Ona Talle S",
+    price: 25000,
+    categories: ["deportivo-importado"], 
+    images: ["/productos/Deportivo/CamperitaOna1.jpeg", "/productos/Deportivo/CamperitaOna2.jpeg", "/productos/Deportivo/CamperitaOna3.jpeg"],
+    stock: 3
+  },
+  {
+    id: 32,
+    name: "Set Luma Talle S",
+    price: 45000,
+    categories: ["deportivo-importado"], 
+    images: ["/productos/Deportivo/SetLuma1.jpeg", "/productos/Deportivo/SetLuma2.jpeg"],
+    stock: 1
+  },
+  {
+    id: 33,
+    name: "Set Nube Tallle S",
+    price: 45000,
+    categories: ["deportivo-importado"], 
+    images: ["/productos/Deportivo/SetNube1.jpeg", "/productos/Deportivo/SetNube2.jpeg", "/productos/Deportivo/SetNube3.jpeg"],
+    stock: 1
+  },
+  {
+    id: 34,
+    name: "Set Luma Talle L",
+    price: 45000,
+    categories: ["deportivo-importado"], 
+    images: ["/productos/Deportivo/SetLuma1.jpeg", "/productos/Deportivo/SetLuma2.jpeg"],
+    stock: 1
+  },
 ];
 
 export default products;
