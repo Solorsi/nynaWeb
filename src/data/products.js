@@ -93,7 +93,7 @@ const products = [
     price: 26000,
     categories: ["vestidos"],
     images: ["/productos/Vestidos/vestidoVienna1.jpeg", "/productos/Vestidos/vestidoVienna2.jpeg"],
-    stock: 1
+    stock: 0
   },
   {
     id: 13,
