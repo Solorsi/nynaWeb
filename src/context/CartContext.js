@@ -53,7 +53,7 @@ export const CartProvider = ({ children }) => {
 
   const aplicarCupon = (codigo) => {
     const normalizado = codigo.trim().toUpperCase();
-    if (normalizado === 'HOTNYNA') {
+    if (normalizado === 'DESACTIVADOPARAQUENADIELOADIVINE') {
       const descuento = total * 0.1;
       setDescuentoAplicado(descuento);
       setCodigoAplicado(normalizado);
@@ -70,7 +70,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem('nyna_cupon'));
-    if (saved && saved.codigo === 'HOTNYNA') {
+    if (saved && saved.codigo === 'DESACTIVADOPARAQUENADIELOADIVINE') {
       setCodigoAplicado(saved.codigo);
       setDescuentoAplicado(total * 0.1); 
     }

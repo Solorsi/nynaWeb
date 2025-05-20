@@ -4,7 +4,7 @@ import ProductGrid from '../components/ProductGrid';
 import products from '../data/products';
 
 const Home = () => {
-  const destacadosIds = [25, 6, 23, 21];
+  const destacadosIds = [37, 39, 23, 38];
 
   const destacados = products
     .filter(product => destacadosIds.includes(product.id))

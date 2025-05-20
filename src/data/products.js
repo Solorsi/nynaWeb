@@ -52,7 +52,7 @@ const products = [
     name: "Top Sara Marron",
     price: 21000,
     categories: ["tops-y-remeras"],
-    images: ["/productos/TopsYRemeras/topSaraMarron.jpeg"],
+    images: ["/productos/TopsYRemeras/topSara3.jpeg","/productos/TopsYRemeras/topSaraMarron.jpeg"],
     stock: 2
   },
   {
@@ -100,7 +100,7 @@ const products = [
     name: "Set Sienna",
     price: 33000,
     categories: ["sets"],
-    images: ["/productos/Sets/setSienna1.jpeg", "/productos/Sets/setSienna2.jpeg"],
+    images: ["/productos/Sets/setSienna1.jpeg", "/productos/Sets/setSienna2.jpeg", "/productos/Sets/setSienna3.jpeg"],
     stock: 1
   },
   {
@@ -172,7 +172,7 @@ const products = [
     name: "Cartera Aura",
     price: 32000,
     categories: ["accesorios"], 
-    images: ["/productos/Accesorios/CarteraAura.jpeg"],
+    images: ["/productos/Accesorios/CarteraAura1.jpeg","/productos/Accesorios/CarteraAura.jpeg"],
     stock: 1
   },
   {
@@ -188,7 +188,7 @@ const products = [
     name: "Pant Noir",
     price: 50000,
     categories: ["pantalones"], 
-    images: ["/productos/Pantalones/PantNoir1.jpeg", "/productos/Pantalones/PantNoir2.jpeg"],
+    images: ["/productos/Pantalones/PantNoir1.jpeg", "/productos/Pantalones/PantNoir2.jpeg", "/productos/Pantalones/PantNoir3.jpeg"],
     stock: 1
   },
   {
@@ -196,7 +196,7 @@ const products = [
     name: "Set Selene",
     price: 42000,
     categories: ["sets"], 
-    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"],
+    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene2.jpeg", "/productos/Sets/SetSelene3.jpeg"],
     stock: 2
   },
   {
@@ -204,7 +204,7 @@ const products = [
     name: "Top Selene",
     price: 20000,
     categories: ["tops-y-remeras"], 
-    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"],
+    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene2.jpeg", "/productos/Sets/SetSelene3.jpeg"],
     stock: 3
   },
   {
@@ -212,7 +212,7 @@ const products = [
     name: "Pant Selene",
     price: 30000,
     categories: ["pantalones"], 
-    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene1.jpeg"],
+    images: ["/productos/Sets/SetSelene1.jpeg", "/productos/Sets/SetSelene2.jpeg", "/productos/Sets/SetSelene3.jpeg"],
     stock: 2
   },
   {
@@ -269,6 +269,86 @@ const products = [
     price: 45000,
     categories: ["deportivo-importado"], 
     images: ["/productos/Deportivo/SetLuma1.jpeg", "/productos/Deportivo/SetLuma2.jpeg"],
+    stock: 1
+  },
+  {
+    id: 35,
+    name: "Jean Crave ",
+    price: 40000,
+    categories: ["pantalones"], 
+    images: ["/productos/Pantalones/JeanCrave1.jpeg", "/productos/Pantalones/JeanCrave2.jpeg"],
+    stock: 1
+  },
+  {
+    id: 36,
+    name: "Top Calma",
+    price: 22000,
+    categories: ["tops-y-remeras"], 
+    images: ["/productos/TopsYRemeras/TopCalma1.jpeg", "/productos/TopsYRemeras/TopCalma2.jpeg", "/productos/TopsYRemeras/TopCalma3.jpeg", "/productos/TopsYRemeras/TopCalma4.jpeg"],
+    stock: 1
+  },
+  {
+    id: 37,
+    name: "Top Cautiva",
+    price: 15000,
+    categories: ["tops-y-remeras"], 
+    images: ["/productos/TopsYRemeras/TopCautiva1.jpeg", "/productos/TopsYRemeras/TopCautiva2.jpeg", "/productos/TopsYRemeras/TopCautiva3.jpeg"],
+    stock: 1
+  },
+  {
+    id: 38,
+    name: "Top Loba",
+    price: 25000,
+    categories: ["tops-y-remeras"], 
+    images: ["/productos/TopsYRemeras/TopLoba1.jpeg", "/productos/TopsYRemeras/TopLoba2.jpeg", "/productos/TopsYRemeras/TopLoba3.jpeg"],
+    stock: 1
+  },
+  {
+    id: 39,
+    name: "Vestido Eclipse",
+    price: 30000,
+    categories: ["vestidos"], 
+    images: ["/productos/Vestidos/VestidoEclipse1.jpeg", "/productos/Vestidos/VestidoEclipse2.jpeg", "/productos/Vestidos/VestidosEclipses.jpeg"],
+    stock: 1
+  },
+  {
+    id: 40,
+    name: "Vestido Eclipse",
+    price: 30000,
+    categories: ["vestidos"], 
+    images: ["/productos/Vestidos/VestidoEclipsePrint1.jpeg", "/productos/Vestidos/VestidosEclipses.jpeg"],
+    stock: 1
+  },
+  {
+    id: 41,
+    name: "Vestido Halo",
+    price: 37000,
+    categories: ["vestidos"], 
+    images: ["/productos/Vestidos/VestidoHalo1.jpeg", "/productos/Vestidos/VestidoHalo2.jpeg"],
+    stock: 1
+  },
+  {
+    id: 42,
+    name: "Vestido Venom",
+    price: 37000,
+    categories: ["vestidos"], 
+    images: ["/productos/Vestidos/VestidoVenom1.jpeg", "/productos/Vestidos/VestidoVenom2.jpeg"],
+    stock: 1
+  },
+  {
+    id: 43,
+    name: "Set Zafiro",
+    price: 35000,
+    categories: ["sets"], 
+    images: ["/productos/Sets/Setzafiro1.jpeg", "/productos/Sets/Setzafiro2.jpeg", "/productos/Sets/Setszafiros.jpeg"],
+    stock: 1
+  },
+  {
+    id: 44,
+    name: "Set Zafiro",
+    price: 35000,
+    categories: ["sets"], 
+    images: ["/productos/Sets/SetzafiroNegro1.jpeg", "/productos/Sets/Setszafiros.jpeg"],
     stock: 1
   },
 ];
