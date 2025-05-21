@@ -1,3 +1,4 @@
+ /* global fbq */
 import React, { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../context/CartContext';
 import './Pago.css';
@@ -90,6 +91,20 @@ Gracias ${datosCliente.nombre} por tu compra!
   const puedeEfectivo = tipoEntrega === 'Retiro';
 
   const handleConfirmar = () => {
+    // 🔥 Evento de compra para Meta
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Purchase', {
+        value: totalFinal,
+        currency: 'ARS',
+        content_type: 'product',
+        contents: cartItems.map(item => ({
+          id: item.id,
+          quantity: item.quantity,
+          item_price: item.price
+        }))
+      });
+    }
+
     window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`, '_blank');
     setTimeout(() => {
       clearCart();

@@ -1,3 +1,4 @@
+/* global fbq */
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
@@ -16,6 +17,18 @@ const ProductGrid = ({ products }) => {
   const handleAddToCart = (e, product) => {
     e.preventDefault();
     if (product.stock === 0) return;
+
+    // Evento personalizado del Píxel de Meta
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'AddToCart', {
+        content_name: product.name,
+        content_ids: [product.id],
+        content_type: 'product',
+        value: product.price,
+        currency: 'ARS'
+      });
+    }
+
     addToCart(product);
     setSelectedProduct(product);
     setShowAlert(true);

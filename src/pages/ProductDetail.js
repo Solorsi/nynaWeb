@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+/* global fbq */
+import React, { useContext, useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import products from '../data/products';
@@ -14,6 +15,19 @@ const ProductDetail = () => {
 
   const [showAlert, setShowAlert] = useState(false);
   const [addedQuantity, setAddedQuantity] = useState(1);
+
+  // 🔥 Evento Meta: ViewContent
+  useEffect(() => {
+    if (product && typeof fbq !== 'undefined') {
+      fbq('track', 'ViewContent', {
+        content_name: product.name,
+        content_ids: [product.id],
+        content_type: 'product',
+        value: product.price,
+        currency: 'ARS'
+      });
+    }
+  }, [product]);
 
   if (!product) return <p>Producto no encontrado.</p>;
 
