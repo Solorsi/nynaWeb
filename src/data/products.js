@@ -52,7 +52,7 @@ const products = [
     name: "Top Sara Marron",
     price: 21000,
     categories: ["tops-y-remeras"],
-    images: ["/productos/TopsYRemeras/topSara3.jpeg","/productos/TopsYRemeras/topSaraMarron.jpeg"],
+    images: ["/productos/TopsYRemeras/TopSara3.jpeg","/productos/TopsYRemeras/topSaraMarron.jpeg"],
     stock: 2
   },
   {
@@ -340,7 +340,7 @@ const products = [
     name: "Set Zafiro",
     price: 35000,
     categories: ["sets"], 
-    images: ["/productos/Sets/Setzafiro1.jpeg", "/productos/Sets/Setzafiro2.jpeg", "/productos/Sets/Setszafiros.jpeg"],
+    images: ["/productos/Sets/SetZafiro1.jpeg", "/productos/Sets/SetZafiro2.jpeg", "/productos/Sets/SetsZafiros.jpeg"],
     stock: 1
   },
   {
@@ -348,7 +348,7 @@ const products = [
     name: "Set Zafiro",
     price: 35000,
     categories: ["sets"], 
-    images: ["/productos/Sets/SetzafiroNegro1.jpeg", "/productos/Sets/Setszafiros.jpeg"],
+    images: ["/productos/Sets/SetZafiroNegro1.jpeg", "/productos/Sets/SetsZafiros.jpeg"],
     stock: 1
   },
 ];
