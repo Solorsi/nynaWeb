@@ -229,7 +229,7 @@ const products = [
     price: 22000,
     categories: ["tops-y-remeras"], 
     images: ["/productos/TopsYRemeras/TopTerracotta1.jpeg", "/productos/TopsYRemeras/TopTerracotta2.jpeg"],
-    stock: 1
+    stock: 0
   },
   {
     id: 30,
@@ -349,6 +349,14 @@ const products = [
     price: 35000,
     categories: ["sets"], 
     images: ["/productos/Sets/SetZafiroNegro1.jpeg", "/productos/Sets/SetsZafiros.jpeg"],
+    stock: 1
+  },
+  {
+    id: 45,
+    name: "Vestido Arizona",
+    price: 40000,
+    categories: ["vestidos"], 
+    images: ["/productos/Vestidos/VestidoArizona1.jpeg", "/productos/Vestidos/VestidoArizona2.jpeg"],
     stock: 1
   },
 ];
